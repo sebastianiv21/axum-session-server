@@ -4,12 +4,21 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-argon2 = "0.5.3"
-askama = "0.14.0"
-async-trait = "0.1.88"
-axum = "0.8.4"
-http = "1.3.1"
-serde = { version = "1.0.219", features = ["derive"] }
-tokio = { version = "1.47.0", features = ["full"] }
-tower-sessions = "0.14.0"
-uuid = { version = "1.17.0", features = ["v4"] }
+# Web framework - fast and ergonomic
+axum = "0.7"
+# Async runtime - required for axum
+tokio = { version = "1.0", features = ["full"] }
+# Session management
+tower-sessions = "0.12"
+# Password hashing - secure and modern
+argon2 = "0.5"
+# HTML templating - compile-time templates
+askama = "0.12"
+# HTTP types
+http = "1.0"
+# For generating session IDs
+uuid = { version = "1.0", features = ["v4"] }
+# Serialization for session data
+serde = { version = "1.0", features = ["derive"] }
+# Async traits
+async-trait = "0.1"

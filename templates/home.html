@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+<h1>Welcome to Axum Session Demo</h1>
+
+{% if logged_in %}
+<div class="success">
+    <p>✅ You are logged in as: <strong>{{ username }}</strong></p>
+    <p><a href="/dashboard">Go to Dashboard</a></p>
+</div>
+{% else %}
+<p>
+    This is a demonstration of session-based authentication using Axum and Rust.
+</p>
+
+<h2>Features:</h2>
+<ul>
+    <li>🔐 Secure user registration and login</li>
+    <li>🍪 Session-based authentication with cookies</li>
+    <li>🔒 Protected routes that require login</li>
+    <li>🛡️ Password hashing with Argon2</li>
+</ul>
+
+<p>
+    Get started by <a href="/signup">creating an account</a> or
+    <a href="/login">logging in</a>.
+</p>
+{% endif %} {% endblock %}

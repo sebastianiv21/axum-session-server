@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Dashboard - Axum Session App{%
+endblock %} {% block content %}
+<h1>Welcome to Your Dashboard</h1>
+
+<div class="success">
+    <p>🎉 You are successfully logged in as: <strong>{{ username }}</strong></p>
+</div>
+
+<h2>What you can do here:</h2>
+<ul>
+    <li>View your profile information</li>
+    <li>Access protected content</li>
+    <li>Manage your account settings</li>
+</ul>
+
+<h3>Session Information:</h3>
+<p><strong>User ID:</strong> {{ user_id }}</p>
+<p><strong>Login time:</strong> {{ login_time }}</p>
+
+<div
+    style="
+        margin-top: 30px;
+        padding: 20px;
+        background: #e8f4fd;
+        border-radius: 4px;
+    "
+>
+    <h3>🔒 This is a protected page!</h3>
+    <p>
+        Only logged-in users can see this content. Try opening this URL in an
+        incognito window - you'll be redirected to the login page.
+    </p>
+</div>
+
+<p><a href="/logout">Logout</a></p>
+{% endblock %}
