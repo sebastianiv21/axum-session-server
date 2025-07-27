@@ -29,18 +29,18 @@ A demonstration project for session-based authentication using [Axum](https://gi
 graph TD
     A[Home Page] -->|Signup| B(Signup Page)
     A -->|Login| C(Login Page)
+    A -->|Has Valid Session| I[Dashboard Protected]
     B -->|Submit Valid Form| D{Username Exists?}
-    D -- Yes --> B
-    D -- No --> E[Create User & Session]
+    D -->|Yes| B
+    D -->|No| E[Create User & Session]
     E --> F[Redirect to Dashboard]
     C -->|Submit Valid Form| G{Credentials Valid?}
-    G -- No --> C
-    G -- Yes --> H[Create Session]
+    G -->|No| C
+    G -->|Yes| H[Create Session]
     H --> F
-    F --> I[Dashboard (Protected)]
+    F --> I
     I -->|Logout| J[Clear Session]
     J --> A
-    A --> I
 ```
 
 ---
