@@ -22,3 +22,12 @@ uuid = { version = "1.0", features = ["v4"] }
 serde = { version = "1.0", features = ["derive"] }
 # Async traits
 async-trait = "0.1"
+chrono = { version = "0.4.41", features = ["serde"] }
+
+[dev-dependencies]
+# Testing utilities for Axum
+axum-test = "14.0"
+# HTTP body utilities for testing
+http-body-util = "0.1"
+# Testing framework
+tokio-test = "0.4"
